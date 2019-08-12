@@ -5,8 +5,8 @@
         <action_delete>false</action_delete>
         <action_insert>false</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
-        <active>false</active>
+        <action_update>false</action_update>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>NeedIt Debugging Practice</name>
+        <name>Manager Email </name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -30,56 +30,25 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-current.short_description = "This text set by the Debugging Business Rules business rule.";
-var myNum = current.state;
-	
-// The function in this try/catch is not defined
-try{
-	thisFunctionDoesNotExist();
-}
-catch(err){
-	gs.error("NeedIt App: a JavaScript runtime error occurred - " + err);
-}
-
-// This function is not defined and is not part of a try/catch
-   thisFunctionAlsoDoesNotExist();
-
-// getNum and setNum demonstrate JavaScript Closure
-var x = 7;
-
-function numFunc(){
-	var x = 10;
-	return{
-		getNum: function(){
-			return x;
-		},
-		setNum: function(newNum){
-			x = newNum;
-		}
-	};
-}
-var callFunc = numFunc();
-callFunc.getNum();
-callFunc.setNum(2);
-callFunc.getNum();
+	current.u_manager_email=current.u_requested_for.manager.email;
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-08-12 07:08:21</sys_created_on>
+        <sys_created_on>2019-08-12 11:20:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e271759cdb533300d6d3e37a4896191b</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>NeedIt Debugging Practice</sys_name>
+        <sys_id>58c0ead8dbd33300d6d3e37a489619f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manager Email </sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_e271759cdb533300d6d3e37a4896191b</sys_update_name>
+        <sys_update_name>sys_script_58c0ead8dbd33300d6d3e37a489619f2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-08-12 11:27:12</sys_updated_on>
+        <sys_updated_on>2019-08-12 11:20:07</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>before_display</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=e271759cdb533300d6d3e37a4896191b"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=58c0ead8dbd33300d6d3e37a489619f2"/>
 </record_update>
